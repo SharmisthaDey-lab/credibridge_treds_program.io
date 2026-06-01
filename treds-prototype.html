@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ReceivaBridge — Prototype</title>
+  <title>CrediBridge Exchange — Prototype</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
@@ -86,7 +86,7 @@
           <line x1="8.5" y1="19" x2="8.5" y2="16" stroke="#FDFCFB" strokeWidth="1.4" strokeLinecap="round"/>
           <line x1="19.5" y1="19" x2="19.5" y2="16" stroke="#FDFCFB" strokeWidth="1.4" strokeLinecap="round"/>
         </svg>
-        <span className="font-bold tracking-tighter text-lg text-[#1A1918]">ReceivaBridge</span>
+        <span className="font-bold tracking-tighter text-lg text-[#1A1918]">CrediBridge Exchange</span>
       </div>
     );
 
@@ -436,7 +436,7 @@
               <div><h2 className="text-xl font-light tracking-tight">Udyam Verification</h2><p className="text-xs text-[#6B665F] mt-1">Real-time check against the MSME ministry portal. No documents required.</p></div>
               <div className="bg-[#F7F5F2] p-4 rounded-sm border border-[#EAE6E1] flex gap-3 items-start">
                 <AlertCircle size={16} className="text-[#928D86] flex-shrink-0 mt-0.5" />
-                <p className="text-[11px] text-[#6B665F] leading-relaxed">Your registered details will be pulled live from <span className="font-mono">udyamregistration.gov.in</span>. ReceivaBridge does not store source documents.</p>
+                <p className="text-[11px] text-[#6B665F] leading-relaxed">Your registered details will be pulled live from <span className="font-mono">udyamregistration.gov.in</span>. CrediBridge Exchange does not store source documents.</p>
               </div>
               <input value={udyamId} onChange={e => setUdyamId(e.target.value.toUpperCase())} disabled={udyamStatus === 'verifying' || udyamStatus === 'verified'}
                 className="w-full p-3 bg-transparent border border-[#EAE6E1] text-sm font-mono focus:outline-none focus:border-[#1A1918] disabled:bg-[#F7F5F2] disabled:text-[#928D86]" placeholder="UDYAM-MH-26-1234567" />
@@ -505,10 +505,10 @@
 
           {step === 3 && (
             <div className="space-y-5 animate-in-fast">
-              <div><h2 className="text-xl font-light tracking-tight">One-Time Master Agreement</h2><p className="text-xs text-[#6B665F] mt-1">A single legal instrument that governs every factoring transaction you originate on ReceivaBridge.</p></div>
+              <div><h2 className="text-xl font-light tracking-tight">One-Time Master Agreement</h2><p className="text-xs text-[#6B665F] mt-1">A single legal instrument that governs every factoring transaction you originate on CrediBridge Exchange.</p></div>
               <div className="bg-[#FBFAF7] border border-[#EAE6E1] rounded-sm p-4 max-h-40 overflow-y-auto text-[11px] text-[#6B665F] leading-relaxed">
                 <p className="font-semibold text-[#1A1918] mb-2 uppercase tracking-widest text-[10px]">Master Receivables Discounting Agreement</p>
-                <p>This Agreement is executed between <span className="font-semibold text-[#1A1918]">{udyamData?.legalName || 'the Seller'}</span> ("Seller") and ReceivaBridge Technologies Pvt Ltd ("Platform"), with reference to the regulatory framework prescribed by the Reserve Bank of India for Trade Receivables Discounting Systems.</p>
+                <p>This Agreement is executed between <span className="font-semibold text-[#1A1918]">{udyamData?.legalName || 'the Seller'}</span> ("Seller") and CrediBridge Exchange Technologies Pvt Ltd ("Platform"), with reference to the regulatory framework prescribed by the Reserve Bank of India for Trade Receivables Discounting Systems.</p>
                 <p className="mt-2">By executing this Agreement, the Seller represents and warrants that all invoices uploaded shall be valid, undisputed, and unencumbered, and authorises the Platform to facilitate discounting transactions with one or more Financiers on the terms accepted in-platform. The Seller further agrees to the No-Recourse and No-Set-off provisions herein and authorises NACH-based settlement of dues.</p>
                 <p className="mt-2">Full terms available in <span className="underline">Schedule A</span>, governed by the laws of India.</p>
               </div>
@@ -1125,7 +1125,7 @@
                 <div className={`flex justify-between items-center border rounded-sm p-4 transition-all ${erpToggle ? 'border-[#1A1918] bg-[#FBFAF7]' : 'border-[#EAE6E1] bg-[#FDFCFB]'}`}>
                   <div className="flex-1 pr-4">
                     <p className="text-[10px] uppercase tracking-widest text-[#928D86] font-bold mb-0.5">Live Sync</p>
-                    <p className="text-xs text-[#1A1918]">Authorise ReceivaBridge to pull invoices in real time from your ERP.</p>
+                    <p className="text-xs text-[#1A1918]">Authorise CrediBridge Exchange to pull invoices in real time from your ERP.</p>
                   </div>
                   <Toggle checked={erpToggle} onChange={setErpToggle} />
                 </div>
@@ -1262,7 +1262,7 @@
     };
 
     // --- Main Application ---
-    function ReceivaBridgePrototype() {
+    function CrediBridgeExchangePrototype() {
       const [isAuthenticated, setIsAuthenticated] = useState(false);
       const [currentRole, setCurrentRole] = useState(null);
       const [userEmail, setUserEmail] = useState('');
@@ -1467,7 +1467,7 @@
     }
 
     const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<ReceivaBridgePrototype />);
+    root.render(<CrediBridgeExchangePrototype />);
   </script>
 </body>
 </html>
